@@ -194,3 +194,48 @@ const activateAccount = (token, password) => {
         }
     });
 };
+
+/**
+ * Forget Password for student
+ * @param {String} email
+ */
+const forgetPassword = (email) => {
+    return new Promise(async (resolve, reject) => {
+        if (!email) {
+            return reject({
+                message: "Please provide all the required fields",
+            });
+        }
+        try {
+            // To find a data using the current credentials
+            const student = await Student.findOne({ email }).select("+password");
+
+            if (student) {
+                student.resetPasswdAccess = true;
+                await student.save();
+                const token = await student.generateResetToken();
+                data = {
+                    email: student.email,
+                    userName: student.name,
+                    type: "Forget",
+                    URL: `${CLIENT_HOST}/student/reset-password/${token}`,
+                };
+                await sendMail(data);
+                resolve({
+                    message:
+                        "A link to reset your password has been emailed to the address provided",
+                });
+            } else {
+                reject({
+                    message: "Incorrect credential",
+                    statusCode: 401,
+                });
+            }
+        } catch (error) {
+            reject({
+                message: error.message,
+                code: error.code || error.name,
+            });
+        }
+    });
+};
