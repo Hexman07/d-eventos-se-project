@@ -1,6 +1,6 @@
 DEVENTOS
 
-<img src="https://raw.githubusercontent.com/MichaelClaytonNoble/Eventlite/main/app/assets/images/favicon.png" width="120" height="120">
+[<img src="https://raw.githubusercontent.com/MichaelClaytonNoble/Eventlite/main/app/assets/images/favicon.png" width="120" height="120">]
 1. [Technologies](#Technologies)
 2. [Landing Page](#Landing-Page)
 3. [User Authentication](#User-Authentication)
