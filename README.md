@@ -33,8 +33,8 @@ Deventos is a event managment and event promotion website. Anyone can create or 
 ### Hosting
 *
  
-## Landing Page
-The landing page welcomes users and shows the most relevant events based on recent events and the date. The featured events section presents users with ideas for events that they may want to explore. 
+## Home Page
+The Home page welcomes users and shows the events which are arriving close. The featured events section presents users with ideas for events that they may want to explore. 
 ![Landing Page](https://user-images.githubusercontent.com/31423958/116631327-b320c080-a909-11eb-8379-b4cbcccd96d3.gif)
 
 ## User Authentication
