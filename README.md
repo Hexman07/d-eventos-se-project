@@ -1,5 +1,5 @@
-# [DEVENTOS]()
- https://user-images.githubusercontent.com/95317252/201474298-52e3c7a7-aa66-4570-90cd-e1bcb0b69c84.png
+# DEVENTOS
+<img src="https://user-images.githubusercontent.com/95317252/201474405-072c9e39-277e-4df5-8a71-acd4dad2247a.jpg" width="120" height="120">
 1. [Technologies](#Technologies)
 2. [Landing Page](#Landing-Page)
 3. [User Authentication](#User-Authentication)
@@ -14,7 +14,7 @@
 
 ## Introduction
 
-Deventos is a clone of the self service ticketing and event promotion website. Anyone can create or find events to attend that they have a passion for or to enrich their lives. Events range from fundraisers to gaming competitions to live music events and guitar lessons. Events can be virtual or in person. 
+Deventos is a event managment and event promotion website. Anyone can create or find events to that they would like to organise or attend. Events range from fundraisers to live music events to Birthday parties to Festive events etc. Events can be virtual or in person. Aim of Deventos is to let its users enjoy the organized events without worring about anything. 
 
 
 ## Technologies
@@ -31,8 +31,7 @@ Deventos is a clone of the self service ticketing and event promotion website. A
  * Postgresql
 
 ### Hosting
- * Heroku
- * AWS
+*
  
 ## Landing Page
 The landing page welcomes users and shows the most relevant events based on recent events and the date. The featured events section presents users with ideas for events that they may want to explore. 
@@ -40,7 +39,7 @@ The landing page welcomes users and shows the most relevant events based on rece
 
 ## User Authentication
 ** Users can sign up, sign in, and sign out.
- * A demo account is available to try login and test all the Eventlite features
+ * A demo account is available to try login and test all the Deventos features
  * Error messages will be displayed if there is an error signing up or in. 
 ![Sign up](https://user-images.githubusercontent.com/31423958/116792773-9e623b00-aa77-11eb-8c57-d427c31f846c.gif)
 
@@ -74,3 +73,4 @@ Events can be liked if the user is interested in attending.
   * Event location will be more specific. Events in the same location as the visitor or user will be recommended first.
 - [ ] Search Bar
   * Users can search the events by address or location.
+![Deventoslogo]()
