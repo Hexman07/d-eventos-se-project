@@ -92,3 +92,105 @@ const signup = (data) => {
         }
     });
 };
+
+/**
+ * Create a account with some credentials for students
+ * @param {String} email
+ * @param {String} password
+ **/
+const login = (email, password) => {
+    return new Promise(async (resolve, reject) => {
+        if (!email || !password) {
+            return reject({
+                message: "Please provide all the required fields",
+            });
+        }
+        try {
+            // To find a data using the current credentials
+            const student = await Student.findOne({ email }).select("+password");
+            const isMatch = student ? await student.matchPasswords(password) : null;
+
+            if (student && isMatch) {
+                if (student.verified) {
+                    const token = await student.generateAccessToken();
+                    resolve({ message: "Login Successfully", token });
+                } else {
+                    const token = await student.generateActivationToken();
+                    data = {
+                        email: student.email,
+                        userName: student.name,
+                        type: "Activation",
+                        URL: `${CLIENT_HOST}/student/activation-token/${token}`,
+                    };
+                    await sendMail(data);
+                    reject({
+                        message:
+                            "This account is not active! A link to activate your account has been emailed to the address provided",
+                    });
+                }
+            } else {
+                reject({
+                    message: "Incorrect email or password",
+                    statusCode: 401,
+                });
+            }
+        } catch (error) {
+            reject({
+                message: error.message,
+                code: error.code || error.name,
+            });
+        }
+    });
+};
+
+/**
+ * Activate a account by verifing password
+ * @param {String} token
+ * @param {String} password
+ */
+const activateAccount = (token, password) => {
+    return new Promise(async (resolve, reject) => {
+        if (!token || !password) {
+            return reject({
+                message: "Please provide all the required fields",
+            });
+        }
+        try {
+            // decode activation token
+            const decoded = await verifyActivationToken(token);
+
+            // To find a data using the current credentials
+            const student = await Student.findById({
+                _id: decoded.studentId,
+            }).select("+password");
+
+            if (student) {
+                if (!student.verified) {
+                    const isMatch = await student.matchPasswords(password);
+                    if (isMatch) {
+                        student.verified = true;
+                        student.save();
+                        return resolve({ message: "Account Activated succesfully" });
+                    } else {
+                        reject({
+                            message: "Incorrect credential",
+                            statusCode: 401,
+                        });
+                    }
+                } else {
+                    reject({ message: "Not Found", statusCode: 404 });
+                }
+            } else {
+                reject({
+                    message: "Incorrect credential",
+                    statusCode: 401,
+                });
+            }
+        } catch (error) {
+            reject({
+                message: error.message,
+                code: error.code || error.name,
+            });
+        }
+    });
+};
