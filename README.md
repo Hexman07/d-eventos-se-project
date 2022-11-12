@@ -1,16 +1,16 @@
 DEVENTOS
 
 [<img src="https://raw.githubusercontent.com/MichaelClaytonNoble/Eventlite/main/app/assets/images/favicon.png" width="120" height="120">]
-1. [Technologies](#Technologies)
-2. [Landing Page](#Landing-Page)
-3. [User Authentication](#User-Authentication)
+1. [Techstack](#Technologies)
+2. [Home Page](#Landing-Page)
+3. [Login / Signup](#User-Authentication)
 4. [Suggestions](#Suggestions)
-5. [Browse](#Browse)
+5. [Browse Events](#Browse)
 6. [Create Events](#Create-Events)
 7. [Managing Events](#Managing-Events)
 8. [View Events](#View-Events)
 9. [Like Events](#Like-Events)
-10. [Future Provisions](#Future-Provisions)
+10. [Future Plans](#Future-Provisions)
 
 
 ## Introduction
@@ -29,8 +29,10 @@ Our  event management and promotion website  is called Deventos. Anyone can crea
 
 ## Home Page
 The Home page welcomes users and shows the events which are arriving close. The featured events section presents users with ideas for events that they may want to explore. 
+
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/95317252/201487438-4f395e6b-1eb4-462e-b13b-5368ef05735f.gif)
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/95317252/201487513-1712cfde-c421-44e4-bc1e-89015d19adb9.gif)
+
 ## Login / Signup
 ** Users can sign up, log in, and log out.
  * A demo account is available to try login and test all the Deventos features.
