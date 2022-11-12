@@ -1,5 +1,5 @@
 # [DEVENTOS]()
- [https://user-images.githubusercontent.com/95317252/201474298-52e3c7a7-aa66-4570-90cd-e1bcb0b69c84.png]
+ https://user-images.githubusercontent.com/95317252/201474298-52e3c7a7-aa66-4570-90cd-e1bcb0b69c84.png
 1. [Technologies](#Technologies)
 2. [Landing Page](#Landing-Page)
 3. [User Authentication](#User-Authentication)
